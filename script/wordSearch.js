@@ -93,6 +93,7 @@ var wordSearch = function () {
 			var max = HEIGHT > WIDTH ? HEIGHT : WIDTH;
 			if(words[0].length > max) {
 				var alert = $("#alert");
+				alert.css("color", "#E83D37");
 				alert.html("Only words with " + max + " or less characters.");
 				alert.animate({opacity:1}, 300);
 				alert.animate({opacity:0}, 2000);
@@ -147,6 +148,10 @@ var wordSearchGame = function() {
 
 	// Event that starts the boxes selection
 	var startSelection = function() {
+		if($(this).hasClass('finished')){
+			return;
+		}
+
 		$(this).addClass('selected');
 		startSquare = this;
 		selectedSquares.push(this);
@@ -155,12 +160,20 @@ var wordSearchGame = function() {
 
 	// Event that handle mouse movement
 	var mouseMove = function() {
+		if($(this).hasClass('finished')){
+			return;
+		}
+
 		selection(this);
 	}
 
 	// Event that ends boxes selection and checks
 	// if the word is valid or not
 	var endSelection = function() {
+		if($(this).hasClass('finished')){
+			return;
+		}
+
 		var found = false;
 		for (var i = 0; i < words.length; i++) {
 			if(words[i] == curWord) {
@@ -175,15 +188,21 @@ var wordSearchGame = function() {
 		// Alert a wrong selection
 		if(!found) {
 			var alert = $("#alert");
+			alert.css("color", "#E83D37");
 			alert.html("Wrong selection!");
 			alert.animate({opacity:1}, 100);
-			alert.animate({opacity:0}, 1500);
+			alert.animate({opacity:0}, 1000);
 		}
 
 		// If there are no more words in the array
 		// than it is finished
 		if(words.length === 0) {
 			$('.puzzleSquare').addClass('finished');
+
+			var alert = $("#alert");
+			alert.html("Solved! Start a new puzzle by clicking Generate.");
+			alert.css("color", "#68E845");
+			alert.css("opacity", "1");
 		}
 
 
@@ -284,16 +303,15 @@ var wordSearchGame = function() {
 			
 			if(puzzle) {
 				$("#alert").html("");
+				$("#alert").css("opacity","0");
 				drawPuzzle(elemPuzzle, puzzle);
 				drawWords(elemWords, words);
 			}
-			
-			$('.puzzleSquare').mousedown(startSelection);
-          	$('.puzzleSquare').mouseenter(mouseMove);
-          	$('.puzzleSquare').mouseup(endSelection);
-          	$('.puzzleSquare').on("touchstart", startSelection);
-          	$('.puzzleSquare').on("touchmove", touchMove);
-          	$('.puzzleSquare').on("touchend", endSelection);
+
+			var square = $('.puzzleSquare');
+			square.mousedown(startSelection);
+	        square.mouseenter(mouseMove);
+	        square.mouseup(endSelection);
 		}
 	}
 };
