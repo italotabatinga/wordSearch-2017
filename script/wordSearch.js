@@ -153,14 +153,6 @@ var wordSearchGame = function() {
 		curWord = $(this).text();
 	}
 
-	// Event that handle touching
-	var touchMove = function(e) {
-		var xPos = e.originalEvent.touches[0].pageX;
-		var yPos = e.originalEvent.touches[0].pageY;
-		var targetElement = document.elementFromPoint(xPos, yPos);
-		selection(targetElement);
-	}
-
 	// Event that handle mouse movement
 	var mouseMove = function() {
 		selection(this);
