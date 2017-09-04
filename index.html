@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Word Search">
+    <meta name="author" content="Ítalo Tabatinga">
+
+    <title style="color: white">Word Search</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="toggled" id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand" style="color: white; font-weight: bold">
+                        Word Search
+                </li>
+                <li>
+                    Words
+                </li>
+                <li>
+                    <textarea placeholder="Write words separated by spaces." id="words" ></textarea>
+                </li>
+                <li>
+                    <a id="generate">Generate</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><img src="src/menuIcon.png" height="35" width="35"><img></a>
+                    </div>
+                    <div class="col-lg-8 text-center">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="text-center" id="wordSearch"></div>
+                                <span id="alert" class="text-center"></span>
+                            </div>
+                            <div class="col-lg-4">
+                                <div id="wordsBar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Word Search Script-->
+    <script src="script/wordSearch.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script src="script/script.js"></script>
+</body>
+
+</html>

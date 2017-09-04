@@ -1,0 +1,76 @@
+body {
+	background-color: #E4F0F7;
+	font-family: Arial;
+}
+
+#menu-toggle {
+	background-color: #77C0EA;
+	border:1px solid #6DAFD5;
+}
+
+#sidebar-wrapper {
+	background-color: #77C0EA;
+	border:1px solid #6DAFD5;
+	color: white;
+}
+
+.puzzleSquare {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #77C0EA;
+    border:1px solid #6DAFD5;
+    border-radius: 2px;
+    margin: 1px;
+    color: white;
+}
+
+.selected {
+	background-color: #6DAFD5;
+}
+
+.found {
+	background-color: #68E845;
+	font-weight: bold;
+}
+ 
+ul {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	display: block;
+  	max-height: 320px;
+}
+ 
+.word{
+	text-decoration: none;
+	border:1px solid #77C0EA;
+	border-radius: 5px;
+	text-align: center;
+	color: #77C0EA;
+  	font: 200 20px/1.5;
+	display: block;
+	padding: 1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.wordFound {
+	background-color: #68E845;
+	font-size: 110%;
+	font-weight: bold;
+	color: white;
+}
+
+#wordsBar {
+	max-height: 320px;
+}
+
+#alert {
+	opacity: 0;
+	font-weight: bold;
+	color: #E83D37;
+}
