@@ -8,7 +8,7 @@
 
 	$("#generate").click(function() {
 		//Get array of words of textarea
-	 	var words = document.getElementById("words").value.split(" ");
+	 	var words = document.getElementById("words").value.toLowerCase().split(" ");
 	 	
 	 	var index = words.indexOf("") //Ignore extra space at the end of the textarea
 	 	while(words.indexOf("") != -1) {
